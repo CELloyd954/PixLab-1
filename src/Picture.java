@@ -176,12 +176,10 @@ public class Picture extends SimplePicture {
 		Pixel bottomPixel = null;
 		int length = pixels[0].length;
 		for (int col = 0; col < pixels[0].length; col++) {
-<<<<<<< HEAD
 			for (int row = 0; row < pixels[0].length / 2; row++) {
 				leftPixel = pixels[row][col];
 				rightPixel = pixels[row][width - 1 - col];
 				rightPixel.setColor(leftPixel.getColor());
-=======
 			for (int row = 0; row < length / 2; row++) {
 				topPixel = pixels[row][col];
 				bottomPixel = pixels[length - 1 - row][col];
