@@ -98,6 +98,21 @@ public class PictureTester
     beach.mirrorDiagonal();
     beach.explore();
   }
+
+  public static void testMirrorArms()
+  {
+    Picture snowman = new Picture("snowman.jpg");
+    snowman.explore();
+    snowman.mirrorArms();
+    snowman.explore();
+  }
+
+  public static void testMirrorGull(){
+    Picture seagull = new Picture("seagull.jpg");
+    seagull.explore();
+    seagull.mirrorArms();
+    seagull.explore();
+  }
   
   /** Method to test the collage method */
   public static void testCollage()
