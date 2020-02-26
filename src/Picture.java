@@ -179,7 +179,7 @@ public class Picture extends SimplePicture {
 			for (int row = 0; row < length / 2; row++) {
 				topPixel = pixels[row][col];
 				bottomPixel = pixels[row - 1 - length][col];
-				bottomPixel.setColor(leftPixel.getColor());
+				bottomPixel.setColor(topPixel.getColor());
 			}
 		}
 	}
@@ -361,6 +361,31 @@ public class Picture extends SimplePicture {
 					leftPixel.setColor(Color.BLACK);
 				else
 					leftPixel.setColor(Color.WHITE);
+			}
+		}
+	}
+
+	public void edgeDetection2(int edgeDist) {
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+		Pixel topPixel = null;
+		Pixel botPixel = null;
+		Pixel[][] pixels = this.getPixels2D();
+		for (int row = 0; row < pixels.length - 1; row++) {
+			for (int col = 0; col < pixels[0].length - 1; col++) {
+				leftPixel = pixels[row][col];
+				rightPixel = pixels[row][col + 1];
+				topPixel = pixels[row][col];
+				botPixel = pixels[row + 1][col];
+				int leftPixelAvg = (leftPixel.getRed() + leftPixel.getBlue() + leftPixel.getGreen()) / 3;
+				int rightPixelAvg = (rightPixel.getRed() + rightPixel.getBlue() + rightPixel.getGreen()) / 3;
+				int topPixelAvg = (topPixel.getRed() + topPixel.getBlue() + topPixel.getGreen()) / 3;
+				int botPixelAvg = (botPixel.getRed() + botPixel.getBlue() + botPixel.getGreen()) / 3;
+				if ((leftPixelAvg - rightPixelAvg) <= edgeDist || (topPixelAvg - botPixelAvg) <= edgeDist) {
+					leftPixel.setColor(Color.WHITE);
+				}
+				else
+					leftPixel.setColor(Color.BLACK);
 			}
 		}
 	}
