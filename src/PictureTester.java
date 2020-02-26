@@ -113,12 +113,26 @@ public class PictureTester
     seagull.mirrorArms();
     seagull.explore();
   }
+
+  public static void testCopyPart() {
+    Picture canvas = new Picture("640x480.jpg");
+    Picture beach = new Picture("beach.jpg");
+    canvas.copyPart(beach, 0, 100, 0, 100, 0, 0);
+    beach.explore();
+    canvas.explore();
+  }
   
   /** Method to test the collage method */
   public static void testCollage()
   {
     Picture canvas = new Picture("640x480.jpg");
     canvas.createCollage();
+    canvas.explore();
+  }
+
+  public static void testMyCollage() {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
     canvas.explore();
   }
   
