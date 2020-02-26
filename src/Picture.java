@@ -174,7 +174,7 @@ public class Picture extends SimplePicture {
 		Pixel[][] pixels = this.getPixels2D();
 		Pixel topPixel = null;
 		Pixel bottomPixel = null;
-		int length = pixels[0].length;
+		int length = pixels.length;
 		for (int col = 0; col < pixels[0].length; col++) {
 			for (int row = 0; row < pixels[0].length / 2; row++) {
 				leftPixel = pixels[row][col];
