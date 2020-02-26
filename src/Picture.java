@@ -178,7 +178,7 @@ public class Picture extends SimplePicture {
 		for (int col = 0; col < pixels[0].length; col++) {
 			for (int row = 0; row < length / 2; row++) {
 				topPixel = pixels[row][col];
-				bottomPixel = pixels[row - 1 - length][col];
+				bottomPixel = pixels[length - 1 - row][col];
 				bottomPixel.setColor(topPixel.getColor());
 			}
 		}
@@ -329,14 +329,14 @@ public class Picture extends SimplePicture {
 		Picture flower1 = new Picture("flower1.jpg");
 		Picture flower2 = new Picture("flower2.jpg");
 		this.copy(flower1, 0, 0);
-		this.copy(flower2, 100, 0);
+		this.copy(flower2, 100, 100);
 		Picture flowerNoBlue = new Picture(flower1);
-		flowerNoBlue.zeroBlue();
-		this.copy(flowerNoBlue, 200, 0);
-		flower1.mirrorHorizontal();
-		flower2.negate();
-		this.copy(flower1, 300, 0);
-		this.copy(flower2, 400, 0);
+		flowerNoRed.zeroRed();
+		this.copy(flowerNoBlue, 200, 200);
+		flower1.grayscale();
+		flower2.mirrorHorizontalBotToTop();
+		this.copy(flower1, 300, 300);
+		this.copy(flower2, 400, 400);
 		this.mirrorVertical();
 		this.write("collage.jpg");
 	}

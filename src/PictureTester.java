@@ -164,9 +164,10 @@ public class PictureTester
     //testKeepOnlyRed();
     //terrorDiagonal();
     //testCollage();
+    testMyCollage();
     //testCopy();
     //testEdgeDetection();
-    testEdgeDetection2();
+    //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);stKeepOnlyGreen();
